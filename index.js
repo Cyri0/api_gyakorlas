@@ -6,6 +6,11 @@ const app = express()
 const PORT = 5000
 app.use(bodyParser.json())
 
-app.listen(PORT, () => { 
-    console.log(`Listening on port: http://localhost:${PORT}`)
+app.get('/', (req, res) => {
+    console.log("Somebody call the homepage...")
+    res.send('Hello from Homepage!')
+})
+
+app.listen(PORT, () => {
+    console.log(`Server running on port: http://localhost:${PORT}`)
 })
